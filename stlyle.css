@@ -1,7 +1,23 @@
+@import url(global.css);
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+header{
+    background-color: #2F6661;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 1vh;
 }
 
 footer {
