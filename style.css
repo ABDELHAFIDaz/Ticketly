@@ -24,8 +24,10 @@ nav ul{
     gap: 1vh;
 }
 
+/* first section */
+
 .event_selection{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -76,12 +78,12 @@ span{
 .events > div div{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    gap: 50px;
+    gap: 20px;
 }
 
-.first3 div {
+.first3>div {
     width: 323px;
     height: 340px;
     background-color: #2F6661;
@@ -100,7 +102,7 @@ span{
     gap: 15px;
 }
 
-.last3 div{
+.last3>div{
     width: 323px;
     height: 340px;
     background-color: #2F6661;
@@ -114,7 +116,7 @@ span{
 /* second section */
 
 .tickets_booking{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -125,13 +127,13 @@ span{
 .event_tickets{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 323px;
     height: 450px;
     background-color: #2F6661;
     border-radius: 9px;
-    gap: 50px;
+    gap: 30px;
 }
 
 .event_tickets .tickets{
@@ -158,6 +160,10 @@ span{
     border: #87CEEB 4px solid;
 }
 
+.event_img img{
+    width: auto;
+    height: 120px;
+}
 
 footer {
     display: flex;
