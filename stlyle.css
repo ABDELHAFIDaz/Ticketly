@@ -1,11 +1,5 @@
 @import url(global.css);
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 header{
     background-color: #2F6661;
     display: flex;
@@ -21,12 +15,100 @@ header h2{
 nav a{
     text-decoration: none;
     color: white;
+    font-size: 10px;
 }
 
 nav ul{
     display: flex;
     list-style: none;
     gap: 1vh;
+}
+
+.event_selection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.progress{
+    display: flex;
+}
+
+.progress :nth-child(odd){
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress :nth-child(even){
+    height: 15px;
+    width: 80px;
+    background-color: gray;
+    align-self: center;
+}
+
+.event_selection h1{
+    color: gray;
+}
+
+.events{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.events p{
+    color: white;
+    font-size: 25px;
+}
+
+.events span{
+    color: #F60909;
+}
+
+.events > div div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.first3 div{
+    width: 323px;
+    height: 340px;
+    background-color: #2F6661;
+    border-radius: 9px;
+}
+
+.first3{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.last3{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.last3 div{
+    width: 323px;
+    height: 340px;
+    background-color: #2F6661;
+    border-radius: 9px;
+}
+
+.events>div>div:hover{
+    border: #87CEEB 4px solid;
 }
 
 footer {
@@ -43,3 +125,15 @@ footer img{
     height: 20px;
 }
 
+@media(min-width:1024px){
+    .first3, .last3{
+        flex-direction: row;
+        gap: 4vw;
+    }
+    nav ul{
+        gap: 3vh;
+    }
+    nav a{
+        font-size: 16px;
+    }
+}
