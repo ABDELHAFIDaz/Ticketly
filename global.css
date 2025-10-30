@@ -1,0 +1,17 @@
+a{
+    text-decoration: none;
+}
+
+.btn{
+    border-radius: 9px;
+    height: 60px;
+    width: 161px;
+    background-color: #87CEEB;
+    padding: 4px 20px;
+    color: black;
+}
+
+.btn a{
+    color: #0D0D28;
+    font-size: 30px;
+}
