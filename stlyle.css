@@ -25,7 +25,7 @@ nav ul{
 }
 
 .event_selection{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -54,7 +54,7 @@ nav ul{
     align-self: center;
 }
 
-.event_selection h1{
+h1{
     color: gray;
 }
 
@@ -64,12 +64,12 @@ nav ul{
     gap: 15px;
 }
 
-.events p{
+.events p, .event_tickets p{
     color: white;
     font-size: 25px;
 }
 
-.events span{
+span{
     color: #F60909;
 }
 
@@ -81,7 +81,7 @@ nav ul{
     gap: 50px;
 }
 
-.first3 div{
+.first3 div {
     width: 323px;
     height: 340px;
     background-color: #2F6661;
@@ -111,6 +111,54 @@ nav ul{
     border: #87CEEB 4px solid;
 }
 
+/* second section */
+
+.tickets_booking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.event_tickets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 323px;
+    height: 450px;
+    background-color: #2F6661;
+    border-radius: 9px;
+    gap: 50px;
+}
+
+.event_tickets .tickets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.event_tickets:hover{
+    border: #87CEEB 4px solid;
+}
+
+.btn_ticket{
+    border-radius: 9px;
+    height: 30px;
+    width: 40px;
+    background-color: #87CEEB;
+    padding: 5px;
+    color: black;
+}
+
+.btn_ticket:hover{
+    border: #87CEEB 4px solid;
+}
+
+
 footer {
     display: flex;
     background-color: #2F6661;
@@ -135,5 +183,11 @@ footer img{
     }
     nav a{
         font-size: 16px;
+    }
+    footer img{
+    height: 30px;
+    }
+    footer h3{
+        font-size: 25px;
     }
 }
