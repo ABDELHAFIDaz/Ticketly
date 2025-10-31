@@ -37,6 +37,7 @@ nav ul{
 
 .progress{
     display: flex;
+    gap: 5px;
 }
 
 .progress :nth-child(odd){
