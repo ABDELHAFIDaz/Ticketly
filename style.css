@@ -24,10 +24,10 @@ nav ul{
     gap: 1vh;
 }
 
-/* first section */
+/* ==============first section============== */
 
 .event_selection{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -113,7 +113,7 @@ span{
     border: #87CEEB 5px solid;
 }
 
-/* second section */
+/* ==============second section============== */
 
 .tickets_booking{
     display: none;
@@ -165,7 +165,7 @@ span{
     height: 120px;
 }
 
-/* third section */
+/* ==============third section============== */
 
 .tickets_filler{
     display: none;
@@ -230,10 +230,10 @@ form>input{
     border: #87CEEB 4px solid;
 }
 
-/* Last section */
+/* ==============Last section============== */
 
 .confirmation_area{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 50px;
