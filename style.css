@@ -66,7 +66,7 @@ h1{
     gap: 15px;
 }
 
-.events p, .event_tickets p{
+p{
     color: white;
     font-size: 25px;
 }
@@ -110,7 +110,7 @@ span{
 }
 
 .events>div>div:hover{
-    border: #87CEEB 4px solid;
+    border: #87CEEB 5px solid;
 }
 
 /* second section */
@@ -168,7 +168,7 @@ span{
 /* third section */
 
 .tickets_filler{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 50px;
@@ -199,11 +199,12 @@ form>input{
     width: 300px;
 }
 
-.input_board{
+.board{
     background-color: #2F6661;
     padding: 30px;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
 
 .tickets_infos{
@@ -225,8 +226,35 @@ form>input{
     color: black;
 }
 
-.input_board:hover{
+.board:hover{
     border: #87CEEB 4px solid;
+}
+
+/* Last section */
+
+.confirmation_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.event_conf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 323px;
+    height: 433px;
+    background-color: #2F6661;
+    border: #87CEEB 4px solid;
+    border-radius: 9px;
+}
+
+.event_conf:hover{
+    border: #87CEEB 5px solid;
 }
 
 footer {
@@ -260,7 +288,7 @@ footer img{
     footer h3{
         font-size: 25px;
     }
-    .input_board{
+    .board{
         flex-direction: row;
     }
 }
