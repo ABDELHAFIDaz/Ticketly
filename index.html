@@ -33,7 +33,7 @@
             </div>
             <h1>Choose an event</h1>
             <section class="events">
-                <div class="first3">
+                <div class="first3" id="first">
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
@@ -56,7 +56,7 @@
                         <p>5 tickets <span>left</span></p>
                     </div>
                 </div>
-                <div class="last3">
+                <div class="last3" id="last">
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
@@ -102,11 +102,11 @@
                 <p>5 tickets <span>left</span></p>
                 <div class="tickets">
                     <div>
-                        <button class="btn_ticket">-</button>
+                        <button class="btn_ticket" id="minus-btn">-</button>
                     </div>
-                    <div style="font-size: 20px;">1</div>
+                    <div style="font-size: 20px;" id="user-tickets">1</div>
                     <div>
-                        <button class="btn_ticket">+</button>
+                        <button class="btn_ticket" id="plus-btn">+</button>
                     </div>
                 </div>
             </div>
@@ -126,6 +126,7 @@
             <h1>Fill the tickets</h1>
             <div class="board">
                 <div class="formula">
+                    <div id="index" style="color: white;"></div>
                     <form action="">
                         <input type="text" placeholder="First name">
                         <input type="text" placeholder="Last name">
