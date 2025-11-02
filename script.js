@@ -120,11 +120,11 @@ minusBtn.onclick = (function () {
 })
 
 let formmm = document.getElementById('form');
-if (currentTicket <= userTickets) {
-    formmm.onsubmit = (function (e) {
-        e.preventDefault(); // to prevent the page from reloading
-        let validation = true;
 
+formmm.onsubmit = (function (e) {
+    e.preventDefault(); // to prevent the page from reloading
+    let validation = true;
+    if (currentTicket <= userTickets) {
         if (!nameRegex.test(firstName.value.trim())) {
             validation = false;
             firstName.style.border = "red 3px solid";
@@ -147,26 +147,27 @@ if (currentTicket <= userTickets) {
         else {
             console.log("valid");
             currentTicket++;
-            if(currentTicket <= userTickets){
+            if (currentTicket <= userTickets) {
                 board();
             }
             document.getElementById('tickets-info').innerHTML +=
-            `<div>
+                `<div>
             <p>${firstName.value} ${lastName.value},</p>
         <p>${email.value}</p>
         <p>${phoneNum.value}</p>
         </div>`
-        formmm.reset();
-        document.getElementById('conf-tickets').innerHTML +=
-        `<div>
+            formmm.reset();
+            document.getElementById('conf-tickets').innerHTML +=
+                `<div>
         <p>${firstName.value} ${lastName.value},</p>
         <p>${email.value}</p>
         <p>${phoneNum.value}</p>
         </div>`
-        formmm.reset();
-        // if(currentTicket == userTickets){
+            formmm.reset();
+            // if(currentTicket == userTickets){
             //     return;
             // }
         }
-    })
-}
+    }
+})
+
