@@ -123,7 +123,7 @@
             <div class="board">
                 <div class="formula">
                     <div id="index" style="color: white;"></div>
-                    <form action="">
+                    <form action="" id="form">
                         <input id="first-name" type="text" placeholder="First name" name="first name" required>
                         <input id="last-name" type="text" placeholder="Last name" name="last name" required>
                         <input id="email" type="email" placeholder="Email" name="email" required>
@@ -131,7 +131,7 @@
                         <button class="sub-btn">Submet</button>
                     </form>
                 </div>
-                <div class="tickets_infos"></div><!--filling from js-->
+                <div class="tickets_infos" id="tickets-info"></div><!--filling from js-->
             </div>
             <button class="btn" id="btn3"><a>NEXT</a></button> <!--takes you to the second page-->
         </section>
@@ -155,7 +155,7 @@
                     <p>LONDON</p>
                     <p>5 tickets <span>reserved</span></p> <!--var is here-->
                 </div>
-                <div class="tickets_infos"></div> <!--filling from js-->
+                <div class="tickets_infos" id="conf-tickets"></div> <!--filling from js-->
             </div>
             <button class="btn" id="btn-confirm"><a href="#">Confirm</a></button>
         </section>

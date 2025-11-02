@@ -225,6 +225,17 @@ form>input{
     padding: 15px;
 }
 
+.tickets_infos > div{
+    background-color: white;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.tickets_infos > div > p{
+    font-size: 10px;
+    color: black;
+}
+
 .sub-btn{
     border-radius: 9px;
     height: 29px;

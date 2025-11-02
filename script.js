@@ -22,6 +22,8 @@ let ticketsArray2 = document.getElementsByClassName('tickets-left2');
 let tickets;
 let userTickets = 1;
 let currentTicket = 1;
+let ticketsIndex = document.getElementById('index');
+
 let eventSelected = document.getElementById('selected-event');
 
 // form variables
@@ -30,9 +32,9 @@ let lastName = document.getElementById('last-name');
 let email = document.getElementById('email');
 let phoneNum = document.getElementById('phone-num');
 
-let nameRegex;
-let emailRgex;
-let phoneRegex;
+let nameRegex = /[a-zA-Z]/;
+let emailRegex = /[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,3}/;
+let phoneRegex = /[0-9]{10}/;
 
 // for the first 3 events
 for (let i = 0; i < 3; i++) {
@@ -44,6 +46,7 @@ for (let i = 0; i < 3; i++) {
         console.log(document.getElementById('selected-event'));
         tickets = ticketsArray1[i].innerHTML;
         btn1.style.backgroundColor = "skyblue";
+        btn2.style.backgroundColor = "skyblue";
         btn1.onclick = (function () {
             sec1.style.display = 'none';
             sec2.style.display = 'flex';
@@ -75,7 +78,9 @@ for (let i = 0; i < 3; i++) {
     })
 }
 
-
+function board() {
+    ticketsIndex.innerHTML = `${currentTicket}/${userTickets}`;
+}
 
 btn2.onclick = (function () {
     sec2.style.display = 'none';
@@ -84,7 +89,7 @@ btn2.onclick = (function () {
     prgss[2].children[1].style.backgroundColor = "lightgreen";
     prgss[2].children[2].style.backgroundColor = "lightgreen";
     prgss[2].children[3].style.backgroundColor = "lightgreen";
-    ticketsIndex.innerHTML = `${currentTicket}/${userTickets}`;
+    board();
 
 })
 
@@ -114,5 +119,54 @@ minusBtn.onclick = (function () {
     }
 })
 
-let ticketsIndex = document.getElementById('index');
+let formmm = document.getElementById('form');
+if (currentTicket <= userTickets) {
+    formmm.onsubmit = (function (e) {
+        e.preventDefault(); // to prevent the page from reloading
+        let validation = true;
 
+        if (!nameRegex.test(firstName.value.trim())) {
+            validation = false;
+            firstName.style.border = "red 3px solid";
+        }
+        if (!nameRegex.test(lastName.value.trim())) {
+            validation = false;
+            lastName.style.border = "red 3px solid";
+        }
+        if (!emailRegex.test(email.value)) {
+            validation = false;
+            email.style.border = "red 3px solid";
+        }
+        if (!phoneRegex.test(phoneNum.value)) {
+            validation = false;
+            phoneNum.style.border = "red 3px solid";
+        }
+        if (validation == false) {
+            console.log("not valid");
+        }
+        else {
+            console.log("valid");
+            currentTicket++;
+            if(currentTicket <= userTickets){
+                board();
+            }
+            document.getElementById('tickets-info').innerHTML +=
+            `<div>
+            <p>${firstName.value} ${lastName.value},</p>
+        <p>${email.value}</p>
+        <p>${phoneNum.value}</p>
+        </div>`
+        formmm.reset();
+        document.getElementById('conf-tickets').innerHTML +=
+        `<div>
+        <p>${firstName.value} ${lastName.value},</p>
+        <p>${email.value}</p>
+        <p>${phoneNum.value}</p>
+        </div>`
+        formmm.reset();
+        // if(currentTicket == userTickets){
+            //     return;
+            // }
+        }
+    })
+}
