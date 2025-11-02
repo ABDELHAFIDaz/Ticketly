@@ -31,7 +31,7 @@
                 <div></div>
                 <div>4</div>
             </div>
-            <h1>Choose an event</h1>
+            <h1 id="title1">Choose an event</h1>
             <section class="events">
                 <div class="first3" id="first">
                     <div>
@@ -39,21 +39,21 @@
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left1">5</span> tickets <span>left</span></p>
                     </div>
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left1">3</span> tickets <span>left</span></p>
                     </div>
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left1">1</span> tickets <span>left</span></p>
                     </div>
                 </div>
                 <div class="last3" id="last">
@@ -62,21 +62,21 @@
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left2">4</span> tickets <span>left</span></p>
                     </div>
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left2">3</span> tickets <span>left</span></p>
                     </div>
                     <div>
                         <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
                         <p>Olympics</p>
                         <p>10/27/2025</p>
                         <p>LONDON</p>
-                        <p>5 tickets <span>left</span></p>
+                        <p><span class="tickets-left2">2</span> tickets <span>left</span></p>
                     </div>
                 </div>
             </section>
@@ -95,11 +95,7 @@
             </div>
             <h1>Invite your friends</h1>
             <div class="event_tickets">
-                <div class="event_img"><img src="assets/img/olympics.png" alt="olympics"></div>
-                <p>Olympics</p>
-                <p>10/27/2025</p>
-                <p>LONDON</p>
-                <p>5 tickets <span>left</span></p>
+                <div id="selected-event"></div>
                 <div class="tickets">
                     <div>
                         <button class="btn_ticket" id="minus-btn">-</button>
@@ -128,12 +124,12 @@
                 <div class="formula">
                     <div id="index" style="color: white;"></div>
                     <form action="">
-                        <input type="text" placeholder="First name">
-                        <input type="text" placeholder="Last name">
-                        <input type="email" placeholder="Email">
-                        <input type="number" placeholder="Phone number">
+                        <input id="first-name" type="text" placeholder="First name" name="first name" required>
+                        <input id="last-name" type="text" placeholder="Last name" name="last name" required>
+                        <input id="email" type="email" placeholder="Email" name="email" required>
+                        <input id="phone-num" type="number" placeholder="Phone number" name="phone number" required>
+                        <button class="sub-btn">Submet</button>
                     </form>
-                    <button class="sub-btn"><a href="#">Submet</a></button>
                 </div>
                 <div class="tickets_infos"></div><!--filling from js-->
             </div>

@@ -1,13 +1,15 @@
+// buttons variables
 let btn1 = document.getElementById('btn1');
 let btn2 = document.getElementById('btn2');
 let btn3 = document.getElementById('btn3');
 let btnConfirm = document.getElementById('btn-confirm');
 
+// sections variables
 const sec1 = document.querySelector('.event_selection');
 const sec2 = document.querySelector('.tickets_booking');
 const sec3 = document.querySelector('.tickets_filler');
 const sec4 = document.querySelector('.confirmation_area');
-
+// 
 let prgss = document.querySelectorAll('.progress');
 
 const first3 = document.getElementById('first');
@@ -15,17 +17,66 @@ const last3 = document.getElementById('last');
 
 let plusBtn = document.getElementById('plus-btn');
 let minusBtn = document.getElementById('minus-btn');
-let tickets = 5;
+let ticketsArray1 = document.getElementsByClassName('tickets-left1');
+let ticketsArray2 = document.getElementsByClassName('tickets-left2');
+let tickets;
 let userTickets = 1;
 let currentTicket = 1;
+let eventSelected = document.getElementById('selected-event');
 
-btn1.onclick = (function () {
-    sec1.style.display = 'none';
-    sec2.style.display = 'flex';
-    prgss[1].children[0].style.backgroundColor = "lightgreen";
-    prgss[1].children[1].style.backgroundColor = "lightgreen";
+// form variables
+let firstName = document.getElementById('first-name');
+let lastName = document.getElementById('last-name');
+let email = document.getElementById('email');
+let phoneNum = document.getElementById('phone-num');
 
-})
+let nameRegex;
+let emailRgex;
+let phoneRegex;
+
+// for the first 3 events
+for (let i = 0; i < 3; i++) {
+    first3.children[i].onclick = (function () {
+        first3.children[i].style.border = '#87CEEB 5px solid';
+        document.getElementById('title1').style.color = 'skyblue';
+        eventSelected.innerHTML = first3.children[i].outerHTML;
+        // first3.children[i].style.border = "none";
+        console.log(document.getElementById('selected-event'));
+        tickets = ticketsArray1[i].innerHTML;
+        btn1.style.backgroundColor = "skyblue";
+        btn1.onclick = (function () {
+            sec1.style.display = 'none';
+            sec2.style.display = 'flex';
+            prgss[1].children[0].style.backgroundColor = "lightgreen";
+            prgss[1].children[1].style.backgroundColor = "lightgreen";
+            eventSelected.children[0].style.border = "none";
+
+        })
+    })
+}
+// for the last 3 events
+for (let i = 0; i < 3; i++) {
+    last3.children[i].onclick = (function () {
+        last3.children[i].style.border = '#87CEEB 5px solid';
+        document.getElementById('title1').style.color = 'skyblue';
+        eventSelected.innerHTML = last3.children[i].outerHTML;
+        console.log(document.getElementById('selected-event'));
+        tickets = ticketsArray2[i].innerHTML;
+        btn1.style.backgroundColor = "skyblue";
+        btn2.style.backgroundColor = "skyblue";
+        btn1.onclick = (function () {
+            sec1.style.display = 'none';
+            sec2.style.display = 'flex';
+            prgss[1].children[0].style.backgroundColor = "lightgreen";
+            prgss[1].children[1].style.backgroundColor = "lightgreen";
+            eventSelected.children[0].style.border = "none";
+
+        })
+    })
+}
+
+
+
 btn2.onclick = (function () {
     sec2.style.display = 'none';
     sec3.style.display = 'flex';
@@ -36,6 +87,7 @@ btn2.onclick = (function () {
     ticketsIndex.innerHTML = `${currentTicket}/${userTickets}`;
 
 })
+
 btn3.onclick = (function () {
     sec3.style.display = 'none';
     sec4.style.display = 'flex';
@@ -48,28 +100,15 @@ btn3.onclick = (function () {
 
 })
 
-// for the first 3 events
-for (let i = 0; i < 3; i++) {
-    first3.children[i].onclick = (function () {
-        first3.children[i].style.border = '#87CEEB 5px solid';
-    })
-}
-// for the last 3 events
-for (let i = 0; i < 3; i++) {
-    last3.children[i].onclick = (function () {
-        last3.children[i].style.border = '#87CEEB 5px solid';
-    })
-}
 
-plusBtn.onclick = (function(){
-    if(userTickets < tickets){
+plusBtn.onclick = (function () {
+    if (userTickets < tickets) {
         userTickets++;
-        console.log(userTickets);
         document.getElementById('user-tickets').innerHTML = `${userTickets}`;
     }
 })
-minusBtn.onclick = (function(){
-    if(userTickets > 1){
+minusBtn.onclick = (function () {
+    if (userTickets > 1) {
         userTickets--;
         document.getElementById('user-tickets').innerHTML = `${userTickets}`;
     }
