@@ -276,6 +276,13 @@ form>input{
     border-radius: 9px;
 }
 
+#event-conff > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
 .event_conf:hover{
     border: #87CEEB 5px solid;
 }

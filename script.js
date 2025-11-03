@@ -42,6 +42,7 @@ for (let i = 0; i < 3; i++) {
         first3.children[i].style.border = '#87CEEB 5px solid';
         document.getElementById('title1').style.color = 'skyblue';
         eventSelected.innerHTML = first3.children[i].outerHTML;
+        document.getElementById('event-conff').innerHTML = first3.children[i].outerHTML;
         // first3.children[i].style.border = "none";
         console.log(document.getElementById('selected-event'));
         tickets = ticketsArray1[i].innerHTML;
@@ -63,6 +64,7 @@ for (let i = 0; i < 3; i++) {
         last3.children[i].style.border = '#87CEEB 5px solid';
         document.getElementById('title1').style.color = 'skyblue';
         eventSelected.innerHTML = last3.children[i].outerHTML;
+        document.getElementById('event-conff').innerHTML = first3.children[i].outerHTML;
         console.log(document.getElementById('selected-event'));
         tickets = ticketsArray2[i].innerHTML;
         btn1.style.backgroundColor = "skyblue";
@@ -102,7 +104,26 @@ btn3.onclick = (function () {
     prgss[3].children[3].style.backgroundColor = "lightgreen";
     prgss[3].children[4].style.backgroundColor = "lightgreen";
     prgss[3].children[5].style.backgroundColor = "lightgreen";
+    document.getElementById('event-conff').children[0].style.border = "none";
+    document.getElementById('event-conff').children[0].children[4].children[0].innerHTML = `${userTickets}`;
+    document.getElementById('event-conff').children[0].children[4].children[1].innerHTML = `reserved`;
 
+})
+
+let x = 0;
+btnConfirm.onclick = (function () {
+    if(x == 0){
+        alert("Confirm");
+        x = 1;
+    }
+    prgss[3].children[0].style.backgroundColor = "lightgreen";
+    prgss[3].children[1].style.backgroundColor = "lightgreen";
+    prgss[3].children[2].style.backgroundColor = "lightgreen";
+    prgss[3].children[3].style.backgroundColor = "lightgreen";
+    prgss[3].children[4].style.backgroundColor = "lightgreen";
+    prgss[3].children[5].style.backgroundColor = "lightgreen";
+    prgss[3].children[6].style.backgroundColor = "lightgreen";
+    btnConfirm.style.backgroundColor = "gray";
 })
 
 
@@ -150,23 +171,23 @@ formmm.onsubmit = (function (e) {
             if (currentTicket <= userTickets) {
                 board();
             }
+            else{
+                btn3.style.backgroundColor = "skyblue";
+                btnConfirm.style.backgroundColor = "skyblue";
+            }
             document.getElementById('tickets-info').innerHTML +=
                 `<div>
             <p>${firstName.value} ${lastName.value},</p>
         <p>${email.value}</p>
         <p>${phoneNum.value}</p>
         </div>`
-            formmm.reset();
-            document.getElementById('conf-tickets').innerHTML +=
-                `<div>
+        document.getElementById('conf-tickets').innerHTML +=
+        `<div>
         <p>${firstName.value} ${lastName.value},</p>
         <p>${email.value}</p>
         <p>${phoneNum.value}</p>
         </div>`
             formmm.reset();
-            // if(currentTicket == userTickets){
-            //     return;
-            // }
         }
     }
 })
