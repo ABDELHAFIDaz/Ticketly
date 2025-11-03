@@ -174,6 +174,7 @@ formmm.onsubmit = (function (e) {
             else{
                 btn3.style.backgroundColor = "skyblue";
                 btnConfirm.style.backgroundColor = "skyblue";
+                document.getElementById('sub_btn').style.backgroundColor = "gray";
             }
             document.getElementById('tickets-info').innerHTML +=
                 `<div>
